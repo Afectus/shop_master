@@ -397,6 +397,8 @@ class goods(models.Model):
 	showvideocount = models.PositiveIntegerField(verbose_name='Количество показов видео', default=0)
 	
 	motivationinpoints1 = models.ForeignKey(goodsmotivationratiosum, on_delete=models.CASCADE, related_name='motivationinpoints1', verbose_name='Мотивация в баллах', default=1)
+
+	gift = models.BooleanField(verbose_name='Подарок', default=False)
 	
 	def __str__(self):
 		return u'%s %s %s %s %s (%s)' % (self.id, self.art, self.id1c, self.idbitrix, self.name, self.base.name)

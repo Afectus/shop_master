@@ -63,6 +63,7 @@ pip install python-telegram-bot
 pip install socketIO-client
 pip install weasyprint #conver HTML to PDF for opt contract
 pip install python-levenshtein pyBarcode
+pip install django-hitcount # Для счетчика просмотров
 #
 
 
