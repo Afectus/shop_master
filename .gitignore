@@ -1,6 +1,7 @@
 #django exclude
 migrations/
 CACHE/
+dump/
 
 
 
