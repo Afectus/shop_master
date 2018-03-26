@@ -1,6 +1,8 @@
 ## оформление кода
 
-имя приложения: **xxxxapp**
+#### приложение 
+
+шаблон имени: **xxxxapp**
 
 пример:
 ```python
@@ -19,7 +21,9 @@ urlpatterns = [
 
 ***
 
-модель: **xxxxitem**, **xxxxlist**, **xxxxs**
+#### модель: 
+
+шаблон имени: **xxxxitem**, **xxxxlist**, **xxxxs**
 
 Загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
 
@@ -41,7 +45,7 @@ class newslist(models.Model): #newslist, newss
 
 ***
 
-управление элементами: admin.py
+#### управление элементами admin.py
 
 пример:
 
@@ -55,9 +59,9 @@ admin.site.register(newslist, newslistAdmin)
 
 ***
 
-управление элементами: panel.py
+#### управление элементами panel.py
 
-#### шаблон наименования класса
+шаблон наименования класса
 
 - список элементов: panel_названиемодели_list(ListView)
 - добавление элемента: panel_названиемодели_add(CreateView)
