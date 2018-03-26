@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 	'acl',
 	'node',
 	'shopapp',
+	'banerapp',
 	#'newsapp',
 	'panel',
 	#

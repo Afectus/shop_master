@@ -1,0 +1,18 @@
+{% extends "panel_base.html" %}
+
+{% block content %}
+<li><a href="{% url 'panel_baneritem_add' %}">Добавить Банер</a></li>
+<br>Список Банеров:
+<dl class="dl-horizontal">
+  {% for baneritem in object_list %}
+    <li>Банер : <img src="{{ baneritem.pict100.url }}"> </li>
+    <li><a href="{% url 'panel_baneritem_edit' baneritem.id %}">Редактировать банер</a></li>
+    <li><a href="{% url 'panel_baneritem_del' baneritem.id %}">Удалить банер</a></li>  
+    <br>
+  {% endfor %}
+</dl>
+ 
+
+
+{% endblock %}
+

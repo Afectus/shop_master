@@ -57,6 +57,7 @@ urlpatterns = [
 	#include app urls
 	url(r'^', include('acl.urls')),
 	url(r'^', include('shopapp.urls')),
+	url(r'^', include('banerapp.urls')),
 	#url(r'^', include('newsapp.urls')),
 	#url(r'^', include('panel.urls')),
 	#
