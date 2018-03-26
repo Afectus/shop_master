@@ -2,7 +2,7 @@
 migrations/
 CACHE/
 dump/
-na_dump/
+na_dump/*.log
 
 
 
