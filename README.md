@@ -38,3 +38,98 @@ class newslist(models.Model): #newslist, newss
 	def __str__(self):
 		return u'%s' % (self.id, self.name)
 ```
+
+***
+
+управление элементами: admin.py
+
+пример:
+
+```python
+from .models import *
+
+class newslistAdmin(admin.ModelAdmin):
+	list_display = ('id', 'user', 'name', 'pict',)
+admin.site.register(newslist, newslistAdmin)
+```
+
+***
+
+управление элементами: panel.py
+
+#####шаблон имени классов
+список элементов: panel_названиемодели_list(ListView)
+добавление элемента: panel_названиемодели_add(CreateView)
+удаление элемента: panel_названиемодел_del(DeleteView)
+редактирование элемента: panel_названиемодел_edit(UpdateView)
+
+пример:
+
+```python
+from acl.views import get_object_or_denied
+#(('A', 'All'), ('L', 'Список'), ('R', 'Чтение'), ('C', 'Создание'), ('U', 'Редактирование'),)
+
+class panel_newslist_list(ListView):
+	model = newslist
+	template_name = 'panel_newslist_list.html'
+
+	def dispatch(self, request, *args, **kwargs):
+		get_object_or_denied(self.request.user, 'newslist', 'L') #проверяем права
+		return super(panel_newslist_list, self).dispatch(request, *args, **kwargs)
+		
+		
+class panel_newslist_add(CreateView):
+	model = newslist
+	template_name = 'panel_newslist_add.html'
+	fields = ['name', 'pict']
+
+	def dispatch(self, request, *args, **kwargs):
+		get_object_or_denied(self.request.user, 'newslist', 'C') #проверяем права
+		return super(panel_newslist_add, self).dispatch(request, *args, **kwargs)
+
+	def form_valid(self, form):
+		instance = form.save(commit=False)
+		instance.user = self.request.user
+		instance.save()
+		self.data = instance
+		return super(panel_newslist_add, self).form_valid(form)
+
+	def get_success_url(self):
+		return reverse_lazy('panel_newslist_list')
+		
+
+class panel_newslist_del(DeleteView):
+	model = newslist
+	template_name = 'panel_newslist_del.html'
+
+	def dispatch(self, request, *args, **kwargs):
+		get_object_or_denied(self.request.user, 'baner', 'U') #проверяем права
+		return super(panel_newslist_del, self).dispatch(request, *args, **kwargs)
+
+	def get_success_url(self):
+		return reverse_lazy('panel_newslist_list')
+		
+		
+class panel_newslist_edit(UpdateView):
+	model = newslist
+	template_name = 'panel_newslist_edit.html'
+	fields = ['url', 'pict']
+
+	def dispatch(self, request, *args, **kwargs):
+		get_object_or_denied(self.request.user, 'baner', 'U') #проверяем права
+		return super(panel_newslist_edit, self).dispatch(request, *args, **kwargs)
+
+	def form_valid(self, form):
+		instance = form.save(commit=False)
+		instance.user = self.request.user
+		instance.save()
+		self.data = instance
+		return super(panel_newslist_edit, self).form_valid(form)
+
+	def get_success_url(self):
+		return reverse_lazy('panel_newslist_list')
+		
+```
+
+
+
