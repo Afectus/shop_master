@@ -180,3 +180,10 @@ urlpatterns = [
 - удаление элемента: **newsapp/templates/panel_newsitem_del.html**
 - редактирование элемента: **newsapp/templates/panel_newsitem_edit.html**
 
+***
+
+#### КАСТОМЫНЕ ТЭГИ templatetags
+кастомыне теги храняться в  **newsapp/templatetags/newsapptag.py**
+
+
+
