@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="node.tax" pk="1">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">16</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Наборы фейерверков</field>
+    <field name="pict" type="FileField">uploads/tax/u8jXFeN702EqH8a10d8DFhXW.png</field>
+    <field name="hurl" type="CharField">nabory_fejerverkov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="2">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">1</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Батареи салютов</field>
+    <field name="pict" type="FileField">uploads/tax/ltchTJZDK1u0nlepuGUauftC.png</field>
+    <field name="hurl" type="CharField">batarei_salyutov</field>
+    <field name="desc" type="TextField">Батареи салютов - наиболее распространенные и пожалуй самые популярные пиротехнические изделия. Представляют собой сборку из трубок заряженных различными видами фейерверков. Заряды из трубок поочередно выстреливают в небо и раскрашивают его всевозможными разрывами салютов. 
+Ассортимент батарей салютов очень большой и позволяет подобрать требуемое количество разрывов, нужные эффекты разрыва, частоту выстрелов, высоту и продолжительность фейерверка. По сути, любая батарея салютов - готовый фейерверк для Вашего праздника.
+Рекомендуем при выборе батареи салютов обращать внимание на калибр - чем больше калибр, тем соответственно выше и мощнее разрывы салюта.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="3">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">2</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Ракеты</field>
+    <field name="pict" type="FileField">uploads/tax/Qc7TiZ93eOTEWxt0DvRtuC53.png</field>
+    <field name="hurl" type="CharField">rakety</field>
+    <field name="desc" type="TextField">Ракеты - классический вид фейерверков. Ракеты взлетают на высоту за счет реактивной силы и разрываются там красочными огнями.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="4">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">4</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Римские свечи</field>
+    <field name="pict" type="FileField">uploads/tax/7xsmMJEpBVd9aZaPguwS7Auw.png</field>
+    <field name="hurl" type="CharField">rimskie_svechi</field>
+    <field name="desc" type="TextField">Римские свечи - фейерверки которые больше всего у любого русского человека с новым годом!. Это те самые "палки"!. Римская свеча это полая трубка, заряженная сразу несколькими пиротехническими зарядами с запрессованным между ними вышибным зарядом. В результате из одного ствола вылетают поочередно несколько зарядов, которые горят, вертятся, трещат и разрываются. По эффекту римские свечи близки к батареям салютов.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="5">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">3</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Одиночные салюты</field>
+    <field name="pict" type="FileField">uploads/tax/yiS87O34ugJMHWb0ytYiTbwn.png</field>
+    <field name="hurl" type="CharField">odinochnye_salyuty</field>
+    <field name="desc" type="TextField">Одиночные салюты - вид фейерверков, наиболее близкий к профессиональным пиротехническим зарядам. Суть применения одиночных салютов заключается в зарядке специальной трубы-мортиры и одиночном выстреле из нее. После чего труба перезаряжается и заново готова к выстрелу. Одиночный салюты, как правило, имеют более большой калибр нежели батареи салютов и соответственно разрывы фейерверка получаются особенно большими и красочными. Одиночный салют настоящая находка для тех, кто любит сам процесс подготовки фейерверков.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="6">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">5</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Фонтаны</field>
+    <field name="pict" type="FileField">uploads/tax/rEJyzgYZLNTohcS1zj0XPSvV.png</field>
+    <field name="hurl" type="CharField">fontany</field>
+    <field name="desc" type="TextField">Фонтаны - фейерверки, работающие аналогично обыкновенным водным фонтанам. Пиротехнические фонтаны горят на земле, простирая на высоту до десяти метров сноп разноцветных искр. Современные фонтаны сопровождают горение треском, свистом и другими эффектами.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="7">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">6</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Мелкие фейерверки и бенгальские огни</field>
+    <field name="pict" type="FileField">uploads/tax/4dE02crEuymRPrM0BOaWmT7s.png</field>
+    <field name="hurl" type="CharField">melkie_fejerverki_i_bengalskie_ogni</field>
+    <field name="desc" type="TextField">Наземные фейерверки - фейерверки, работающие на уровне земле. Они крутятся и вертятся, разбрасывают искры, горят огнем различного цвета, хлопают и трещат. Летающие фейерверки - очень схожи с наземными фейерверками, главное их отличие заключается в том, что они, крутясь взлетают в небо и уже там разрываются.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="8">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">17</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Петарды и хлопушки</field>
+    <field name="pict" type="FileField">uploads/tax/kbbLWGP0ST0XiZMitrABy2rL.png</field>
+    <field name="hurl" type="CharField">petardy_i_hlopushki</field>
+    <field name="desc" type="TextField">Петарды - наиболее простые фейерверки, знакомые абсолютно всем с детства. Эффект петарды заключается в громком хлопке, который заставляет всех окружающих вздрогнуть. Именно этот хлопок так нравиться мальчишкам и так раздражает взрослых</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="9">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">18</field>
+    <field name="status" type="BooleanField">True</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Дымовые, иммитационные, сигнальные</field>
+    <field name="pict" type="FileField">uploads/tax/DngzaKzE6JjfiQ51HfvHorx2.png</field>
+    <field name="hurl" type="CharField">dymovye_immitacionnye_signalnye</field>
+    <field name="desc" type="TextField">Дымовые, сигнальные, имитационные - фальшфейеры, фаеры различных цветов, а также сигнальные факелы для маломерных судов.</field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="10">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">10</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">2</field>
+    <field name="name" type="CharField">Малые батареи салютов</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">malye_batarei_salyutov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="11">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">11</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">2</field>
+    <field name="name" type="CharField">Средние батареи салютов</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">srednie_batarei_salyutov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="12">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">12</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">2</field>
+    <field name="name" type="CharField">Большие батареи салютов</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">bolshie_batarei_salyutov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="13">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">13</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">2</field>
+    <field name="name" type="CharField">Гигантские батареи салютов</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">gigantskie_batarei_salyutov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="14">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">14</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">2</field>
+    <field name="name" type="CharField">Комбинированные и веерные батареи салютов</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">kombinirovannye_i_veernye_batarei_salyutov</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="15">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">9</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Карнавальная продукция</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">karnavalnaya_produkciya</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="17">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">8</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Небесные фонарики</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">nebesnye_fonariki</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="18">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">7</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax"><None></None></field>
+    <field name="name" type="CharField">Гелиевые шары</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">gelievye_shary</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="20">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">23</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Латексные_Однотонные</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">lateksnye_odnotonnye</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="21">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">24</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Латексные_Прозрачные</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">lateksnye_prozrachnye</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="22">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">22</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Латексные_С_рисунком</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">lateksnye_s_risunkom</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="23">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">28</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Фольга_Новинки</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">folga_novinki</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="24">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">27</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Фольга_(звезды, круги, сердца)</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">folga__zvezdy_krugi_serdca</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="25">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">26</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Фольга_Фигуры</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">folga_figury</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+  <object model="node.tax" pk="26">
+    <field name="id1c" type="CharField"></field>
+    <field name="idbitrix" type="CharField">25</field>
+    <field name="status" type="BooleanField">False</field>
+    <field name="parent" rel="ManyToOneRel" to="node.tax">18</field>
+    <field name="name" type="CharField">Фольга_Цифры</field>
+    <field name="pict" type="FileField"></field>
+    <field name="hurl" type="CharField">folga_cifry</field>
+    <field name="desc" type="TextField"></field>
+    <field name="showonsite" type="BooleanField">True</field>
+  </object>
+</django-objects>

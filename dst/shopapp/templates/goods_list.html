@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Basic Styles -->
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap4/css/bootstrap.min.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	<title>{{object.name}}</title>
+	
+</head>
+<body>
+	{% load shoptag %}
+	{% load nodetag %}
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="col-xs-6 col-sm-3">
+				<br>
+				<span style="position: relative; left:1.3rem"><h5>Каталог</h5></span>
+				<div class="list-group">
+					{% sidebar_obj object as sidebar %}
+					
+					{% for si in sidebar.0 %}
+					<div class="list-group-item">
+						{% if si == object or si == object.parent %}
+						
+							<a href="{% url 'shopapp:goods_list' si.hurl %}"  
+								{% if si == object %} 
+									style="color: red" 
+								{% endif %}
+							>
+								{{si.name}}
+							</a>
+						
+							{% if sidebar.1 %}
+								<div style="width: 120%; position: relative; left:-1.3rem">
+								<ul style="list-style-type: none">
+									{% for ci in sidebar.1 %}
+										<li>
+											<a href="{% url 'shopapp:goods_list' ci.hurl %}" 
+											{% if ci == object %}style="color: red"{% endif %}>
+											{{ci.name}}
+											</a>
+										</li>
+									{% endfor %} 
+								</ul>
+								</div>
+							{% endif %}
+						
+						{% else %}
+							<a href="{% url 'shopapp:goods_list' si.hurl %}">{{si.name}}</a>
+						{% endif %}	
+
+						
+					</div>	
+					{% endfor %}
+						
+					
+				</div>
+			</div>
+			<!--/.sidebar-->
+
+			<div class="col-xs-6 col-sm-9">
+				
+				<div class="jumbotron">
+					<h1>{{ object.name }}</h1>
+					<p>{{ object.desc }}</p>
+				</div>
+
+				<div class="row">
+					{% for i in object_list %}
+						<div class="col-xs-12 col-lg-12" style="border: 1px solid; margin: 10px">	
+							<h3>{{ i.name }}</h3>
+							<div style="border: 1px solid; display:flex">
+								{% if  i.pict %}
+									<div style="border: 1px solid; position: relative; top: 0px">	
+										<img src="{{ i.pict200.url }}" class="img-fluid" >
+									</div>		
+								{% else %}
+									<div style="border: 1px solid; position: relative; width: 200px; height: 200px">	
+										Картинка появится в скором времени
+									</div>
+								{% endif %}
+									
+								<div style="border: 1px solid;">
+									Цена: {{ i.price }} р.<br>
+									У меня есть дисконтная карта кабинет покупателя
+									<div class="properties" style="border: 1px solid; ">
+										<ul style="list-style-type: none; ">
+											{% proplist i.id as p%}
+
+											{% for pi in p %}
+												<li>{{ pi.name }}: {{ pi.value }} {{ pi.baseunit }}</li>
+											{% endfor %}
+										</ul>
+									</div>
+
+
+								</div>	
+								
+								<div style="border: 1px solid; width: auto; margin: 0px 10px">
+									Наличие в магазинах:<br>
+									{% goods_in_stock i as gis %}
+									{% for gi in gis %}
+										{{gi.stock.name}} - {{gi.value}}<br>
+									{% endfor %}
+								</div>
+								
+							</div>
+							<div style="border: 1px solid;">
+								<a class="btn btn-default" href="#" role="button">Добавить в корзину</a><br>
+								<a class="btn btn-default" href="#" role="button">Подробнее о товаре</a><br>
+								<a class="btn btn-default" href="#" role="button">Посмотреть видео</a><br>
+							</div>
+						</div>
+					{% endfor %}
+
+					<div class="col-xs-12 col-lg-12" style="border: 1px solid; margin: 10px">
+						Страницы:<br>
+						{% include "xpaginator.html" %}					
+					</div>
+				</div>
+				<!--/row-->
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
