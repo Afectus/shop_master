@@ -76,6 +76,7 @@ from acl.views import get_object_or_denied
 class panel_newslist_list(ListView):
 	model = newslist
 	template_name = 'panel_newslist_list.html'
+	#для вывода списка элементов в шаблоне использовать переменную object_list
 
 	def dispatch(self, request, *args, **kwargs):
 		get_object_or_denied(self.request.user, 'newslist', 'L') #проверяем права
