@@ -1,4 +1,4 @@
-# Правила оформления кода
+## оформление кода
 
 имя приложения: **xxxxapp**
 
@@ -10,14 +10,16 @@ INSTALLED_APPS = [
 	'newsapp',
 	...
 ]
+urlpatterns = [
+	url(r'^', include('shopapp.urls')),
+	url(r'^', include('banerapp.urls')),
+	url(r'^', include('newsapp.urls')),
+	...
 ```
 
 ***
 
-Имя модели: **xxxxitem**, **xxxxlist**, **xxxxs**
-
-пример: **newsitem**, **newslist**, **newss**
-
+модель: **xxxxitem**, **xxxxlist**, **xxxxs**
 
 Загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
 
@@ -25,6 +27,14 @@ INSTALLED_APPS = [
 ```python
 from dj.views import *
 
-class newslist(models.Model):
-	pict = models.ImageField(upload_to=make_upload_file, verbose_name="Изображение")
+class newslist(models.Model): #newslist, newss
+	id = models.AutoField(primary_key=True, unique=True) #обязательное поле
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+	name = models.CharField(verbose_name='Название', max_length=200)
+	pict = models.ImageField(upload_to=make_upload_file, verbose_name='Изображение')
+	pict40 = ImageSpecField(source='pict', processors=[ResizeToFit(40, 40)], format='PNG', options={'quality': 95})
+	pict100 = ImageSpecField(source='pict', processors=[ResizeToFit(100, 100)], format='PNG', options={'quality': 95})
+
+	def __str__(self):
+		return u'%s' % (self.id, self.name)
 ```
