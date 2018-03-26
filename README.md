@@ -13,7 +13,7 @@
 Загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
 
 пример:
-```
+```python
 from dj.views import *
 
 class newslist(models.Model):
