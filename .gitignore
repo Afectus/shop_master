@@ -1,8 +1,8 @@
 #django exclude
 migrations/
 CACHE/
-na_dump/dump/
-na_dump/*.log
+dump/
+
 
 
 
