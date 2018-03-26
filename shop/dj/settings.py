@@ -104,8 +104,8 @@ DATABASES = {
 		'NAME': 'shop', #после восстановления от 031217 старая crm новая будет crm2
 		'USER': 'shop',
 		'PASSWORD': 'shop',
-		'HOST': '127.0.0.1',
-		'PORT': '5432',
+		'HOST': '94.73.245.253',
+		'PORT': '5433',
 	}
 }
 
@@ -339,15 +339,15 @@ LOGGING = {
 			# 'filters': ['require_debug_false'],
 			# 'class': 'django.utils.log.AdminEmailHandler'
 		# },
-		'logerror': {
-			'level': 'WARNING',
-			#'filters': ['require_debug_false'],
-			#'formatter': 'verbose',
-			'maxBytes': 1024*1024*5, # 5 MB
-			'backupCount': 5,
-			'class': 'logging.handlers.RotatingFileHandler',
-			'filename': os.path.join(BASE_DIR, 'na_log/error.log'),
-		},
+		# 'logerror': {
+		# 	'level': 'WARNING',
+		# 	#'filters': ['require_debug_false'],
+		# 	#'formatter': 'verbose',
+		# 	'maxBytes': 1024*1024*5, # 5 MB
+		# 	'backupCount': 5,
+		# 	'class': 'logging.handlers.RotatingFileHandler',
+		# 	'filename': os.path.join(BASE_DIR, 'na_log/error.log'),
+		# },
 		# 'logsql': {
 			# 'level': 'DEBUG',
 			# #'filters': ['require_debug_false'],
@@ -357,75 +357,75 @@ LOGGING = {
 			# 'class': 'logging.handlers.RotatingFileHandler',
 			# 'filename': os.path.join(BASE_DIR, 'na_log/sql.log'),
 		# },
-		'logmain': {
-			'level': 'DEBUG',
-			#'filters': ['require_debug_false'],
-			'formatter': 'verbose',
-			'maxBytes': 1024*1024*5, # 5 MB
-			'backupCount': 5,
-			'class': 'logging.handlers.RotatingFileHandler',
-			'filename': os.path.join(BASE_DIR, 'na_log/main.log'),
-		},
-		'acl': {
-			'level': 'INFO',
-			#'filters': ['require_debug_false'],
-			'formatter': 'verbose',
-			'maxBytes': 1024*1024*5, # 5 MB
-			'backupCount': 5,
-			'class': 'logging.handlers.RotatingFileHandler',
-			'filename': os.path.join(BASE_DIR, 'na_log/acl.log'),
-		},
-		'shopapp': {
-			'level': 'INFO',
-			#'filters': ['require_debug_false'],
-			'formatter': 'verbose',
-			'maxBytes': 1024*1024*5, # 5 MB
-			'backupCount': 5,
-			'class': 'logging.handlers.RotatingFileHandler',
-			'filename': os.path.join(BASE_DIR, 'na_log/shopapp.log'),
-		},
-		'newsapp': {
-			'level': 'INFO',
-			#'filters': ['require_debug_false'],
-			'formatter': 'verbose',
-			'maxBytes': 1024*1024*5, # 5 MB
-			'backupCount': 5,
-			'class': 'logging.handlers.RotatingFileHandler',
-			'filename': os.path.join(BASE_DIR, 'na_log/newsapp.log'),
-		},
+		# 'logmain': {
+		# 	'level': 'DEBUG',
+		# 	#'filters': ['require_debug_false'],
+		# 	'formatter': 'verbose',
+		# 	'maxBytes': 1024*1024*5, # 5 MB
+		# 	'backupCount': 5,
+		# 	'class': 'logging.handlers.RotatingFileHandler',
+		# 	'filename': os.path.join(BASE_DIR, 'na_log/main.log'),
+		# },
+		# 'acl': {
+		# 	'level': 'INFO',
+		# 	#'filters': ['require_debug_false'],
+		# 	'formatter': 'verbose',
+		# 	'maxBytes': 1024*1024*5, # 5 MB
+		# 	'backupCount': 5,
+		# 	'class': 'logging.handlers.RotatingFileHandler',
+		# 	'filename': os.path.join(BASE_DIR, 'na_log/acl.log'),
+		# },
+		# 'shopapp': {
+		# 	'level': 'INFO',
+		# 	#'filters': ['require_debug_false'],
+		# 	'formatter': 'verbose',
+		# 	'maxBytes': 1024*1024*5, # 5 MB
+		# 	'backupCount': 5,
+		# 	'class': 'logging.handlers.RotatingFileHandler',
+		# 	'filename': os.path.join(BASE_DIR, 'na_log/shopapp.log'),
+		# },
+		# 'newsapp': {
+		# 	'level': 'INFO',
+		# 	#'filters': ['require_debug_false'],
+		# 	'formatter': 'verbose',
+		# 	'maxBytes': 1024*1024*5, # 5 MB
+		# 	'backupCount': 5,
+		# 	'class': 'logging.handlers.RotatingFileHandler',
+		# 	'filename': os.path.join(BASE_DIR, 'na_log/newsapp.log'),
+		# },
 	},
 	'loggers': {
-		'django': {
-			#'handlers': ['logmain', 'mailadmins',],
-			'handlers': ['logerror',],
-			'level': 'WARNING',
-			'propagate': True,
-		},
-		'django.request': {
-			#'handlers': ['logmain', 'mailadmins',],
-			'handlers': ['logerror',],
-			'level': 'WARNING',
-			'propagate': True,
-		},
+		# 'django': {
+		# 	#'handlers': ['logmain', 'mailadmins',],
+		# 	'handlers': ['logerror',],
+		# 	'level': 'WARNING',
+		# 	'propagate': True,
+		# },
+		# 'django.request': {
+		# 	#'handlers': ['logmain', 'mailadmins',],
+		# 	'handlers': ['logerror',],
+		# 	'level': 'WARNING',
+		# 	'propagate': True,
+		# },
 		# 'django.db.backends': {
 			# 'handlers': ['logsql',],
 			# 'level': 'DEBUG',
 			# 'propagate': True,
 		# },
-		'acl': {
-			'handlers': ['acl',],
-			'level': 'INFO',
-			'propagate': True,
-		},
-		'shopapp': {
-			'handlers': ['shopapp',],
-			'level': 'INFO',
-			'propagate': True,
-		},
-		'newsapp': {
-			'handlers': ['newsapp',],
-			'level': 'INFO',
-			'propagate': True,
-		},
+		# 'acl': {
+		# 	'handlers': ['acl',],
+		# 	'level': 'INFO',
+		# 	'propagate': True,
+		# },
+		# 'shopapp': {
+		# 	'handlers': ['shopapp',],
+		# 	'level': 'INFO',
+		# 	'propagate': True,
+		# },
+		# 'newsapp': {
+		# 	'handlers': ['newsapp',],
+		# 	'level': 'INFO',
+		# 	'propagate': True,
+		# },
 	}
 }

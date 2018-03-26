@@ -74,13 +74,5 @@ from node.models import *
 # for i in data:
 	# print(i.name, i.s1)
 
-	
-	
-	
-from django.db.models.expressions import RawSQL
-data = goods.objects.raw("select * from node_goodsinstock inner join node_goods on node_goodsinstock.goods_id = node_goods.id inner join node_stock on node_goodsinstock.stock_id=node_stock.id WHERE value >0;")
 
-for i in data:
-	print(dir(i))
-	
 
