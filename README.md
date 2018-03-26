@@ -180,6 +180,29 @@ urlpatterns = [
 - удаление элемента: **newsapp/templates/panel_newsitem_del.html**
 - редактирование элемента: **newsapp/templates/panel_newsitem_edit.html**
 
+```html
+<!-- пример базового шаблона -->
+{% extends "base.html" %}
+{% block title %}Заголовок - панель управления{% endblock %}
+{% block description %}Описание - панель управления{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+
+{% load nodetag %}
+
+{# если необходимо подключаем кастомные теги #}
+{% load newsapptag %}
+
+{# если необходимо подключаем пагинатор #}
+{% include "paginator.html" %}
+
+{% endblock %}
+
+```
+
+
+
 ***
 
 #### КАСТОМЫНЕ ТЭГИ templatetags
