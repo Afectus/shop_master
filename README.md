@@ -7,10 +7,10 @@
 ```python
 #пример
 INSTALLED_APPS = [
-	'shopapp',
-	'banerapp',
-	'newsapp',
-	...
+'shopapp',
+'banerapp',
+'newsapp',
+...
 ]
 urlpatterns = [
 	url(r'^', include('shopapp.urls')),
