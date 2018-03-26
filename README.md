@@ -1,11 +1,11 @@
-## Порядок оформление кода
+## ПОРЯДОК ОФОРМЛЕНИЕ КОДА
 
-#### ПРИЛОЖЕНИЕ 
+#### ПРИЛОЖЕНИЕ app
 
 шаблон имени: **xxxxapp**
 
-пример:
 ```python
+#пример
 INSTALLED_APPS = [
 	'shopapp',
 	'banerapp',
@@ -21,14 +21,14 @@ urlpatterns = [
 
 ***
 
-#### МОДЕЛЬ
+#### МОДЕЛЬ models.py
 
 шаблон имени: **xxxxitem**, **xxxxlist**, **xxxxs**
 
 Загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
 
-пример:
 ```python
+#пример
 from dj.views import *
 
 class newslist(models.Model): #newslist, newss
@@ -47,9 +47,8 @@ class newslist(models.Model): #newslist, newss
 
 #### УПРАВЛЕНИЕ ЭЛЕМЕНТАМИ admin.py
 
-пример:
-
 ```python
+#пример
 from .models import *
 
 class newslistAdmin(admin.ModelAdmin):
@@ -69,9 +68,8 @@ admin.site.register(newslist, newslistAdmin)
 - редактирование элемента: panel_названиемодел_edit(UpdateView)
 
 
-пример:
-
 ```python
+#пример
 from acl.views import get_object_or_denied
 #(('A', 'All'), ('L', 'Список'), ('R', 'Чтение'), ('C', 'Создание'), ('U', 'Редактирование'),)
 
