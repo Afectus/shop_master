@@ -3,7 +3,7 @@
 имя приложения: **xxxxapp**
 
 пример:
-```
+```python
 INSTALLED_APPS = [
 	'shopapp',
 	'banerapp',
@@ -12,7 +12,7 @@ INSTALLED_APPS = [
 ]
 ```
 
----
+***
 
 Имя модели: **xxxxitem**, **xxxxlist**, **xxxxs**
 
