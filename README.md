@@ -7,10 +7,10 @@
 ```python
 #пример
 INSTALLED_APPS = [
- 'shopapp',
- 'banerapp',
- 'newsapp',
- ...
+	'shopapp',
+	'banerapp',
+	'newsapp',
+	...
 ]
 urlpatterns = [
 	url(r'^', include('shopapp.urls')),
@@ -60,7 +60,7 @@ admin.site.register(newslist, newslistAdmin)
 
 #### УПРАВЛЕНИЕ ЭЛЕМЕНТАМИ panel.py
 
-шаблон наименования класса
+шаблон имени класса
 
 - список элементов: panel_названиемодели_list(ListView)
 - добавление элемента: panel_названиемодели_add(CreateView)
@@ -133,6 +133,30 @@ class panel_newslist_edit(UpdateView):
 	def get_success_url(self):
 		return reverse_lazy('panel_newslist_list')
 		
+```
+
+***
+
+#### РОУТИНГ url.py
+
+url типа **'panel/newslist/list/'** передает управление классу **panel_newslist_list** (/ заменяется на _), каноническое имя url идентично названию класса **panel_newslist_list**
+
+```python
+#пример
+from django.contrib.auth.decorators import login_required
+
+from .views import *
+from .panel import *
+
+urlpatterns = [
+	#views.py публичная часть
+	re_path('^/newslist/list/?$', newslist_list.as_view(), name='newslist_list'),
+	#panel.py приватная часть
+	re_path('^panel/newslist/list/?$', login_required(panel_newslist_list.as_view()), name='panel_newslist_list'),
+	re_path('^panel/newslist/add/?$', login_required(panel_newslist_add.as_view()), name='panel_newslist_add'),
+	re_path('^panel/newslist/del/(?P<pk>\d+)/?$', login_required(panel_newslist_del.as_view()), name='panel_newslist_del'),
+	re_path('^panel/newslist/edit/(?P<pk>\d+)/?$', login_required(panel_newslist_edit.as_view()), name='panel_newslist_edit'),
+]
 ```
 
 
