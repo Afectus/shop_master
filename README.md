@@ -191,11 +191,9 @@ urlpatterns = [
 
 {% load nodetag %}
 
-{# если необходимо подключаем кастомные теги #}
-{% load newsapptag %}
+{% load newsapptag %} <!-- если необходимо подключаем кастомные теги -->
 
-{# если необходимо подключаем пагинатор #}
-{% include "paginator.html" %}
+{% include "paginator.html" %} <!-- если необходимо подключаем пагинатор -->
 
 {% endblock %}
 
