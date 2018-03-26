@@ -143,7 +143,7 @@ class panel_newslist_edit(UpdateView):
 
 - каноническое имя url идентично названию класса **panel_newslist_list**
 
-- при обращении к url через ```reverse_lazy('panel_newslist_list')``` понимаем, что будет вызван класс panel_newslist_list
+- при обращении к url через ```reverse_lazy('panel_newslist_list')``` понимаем, что будет вызван класс ```class panel_newslist_list(ListView):``` из **panel.py** приложения
 
 ```python
 #пример
