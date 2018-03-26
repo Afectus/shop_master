@@ -62,10 +62,10 @@ admin.site.register(newslist, newslistAdmin)
 
 шаблон имени класса
 
-- список элементов: panel_названиемодели_list(ListView)
-- добавление элемента: panel_названиемодели_add(CreateView)
-- удаление элемента: panel_названиемодел_del(DeleteView)
-- редактирование элемента: panel_названиемодел_edit(UpdateView)
+- список элементов: '''python panel_названиемодели_list(ListView)'''
+- добавление элемента: '''python panel_названиемодели_add(CreateView)'''
+- удаление элемента: panel_'''python названиемодел_del(DeleteView)'''
+- редактирование элемента: '''python panel_названиемодел_edit(UpdateView)'''
 
 
 ```python
@@ -143,7 +143,7 @@ class panel_newslist_edit(UpdateView):
 
 - каноническое имя url идентично названию класса **panel_newslist_list**
 
-- при обращении к url через ```reverse_lazy('panel_newslist_list')``` понимаем, что будет вызван класс ```class panel_newslist_list(ListView):``` из **panel.py** приложения
+- при обращении к url через ```reverse_lazy('panel_newslist_list')``` понимаем, что будет вызван ```class panel_newslist_list(ListView):``` из **panel.py** приложения
 
 ```python
 #пример
@@ -163,5 +163,18 @@ urlpatterns = [
 ]
 ```
 
+***
 
+#### ШАБЛОНЫ templates
+
+шаблоны приложений храняться в каталоге **newsapp/templates**
+
+публичная часть
+- список элементов: **newsapp/templates/newsitem_list.html**
+
+приватная часть
+- список элементов: **newsapp/templates/panel_newsitem_list.html**
+- добавление элемента: **newsapp/templates/panel_newsitem_add.html**
+- удаление элемента: panel_**newsapp/templates/panel_newsitem_del.html**
+- редактирование элемента: **newsapp/templates/panel_newsitem_edit.html**
 
