@@ -181,10 +181,10 @@ urlpatterns = [
 - редактирование элемента: **newsapp/templates/panel_newsitem_edit.html**
 
 ```html
-<!-- пример базового шаблона -->
-{% extends "base.html" %}
-{% block title %}Заголовок - панель управления{% endblock %}
-{% block description %}Описание - панель управления{% endblock %}
+<!-- пример базового шаблона приватной части -->
+{% extends "panel_base.html" %}
+{% block title %}Панель управления{% endblock %}
+{% block description %}Панель управления{% endblock %}
 {% block keywords %}{% endblock %}
 
 {% block content %}
@@ -199,7 +199,45 @@ urlpatterns = [
 
 ```
 
+```html
+<!-- пример базового шаблона публичной части элемента детально -->
+{% extends "base.html" %}
+{% block title %} {{ object.seo_title }} {% endblock %}
+{% block description %} {{ object.seo_description }} {% endblock %}
+{% block keywords %} {{ object.seo_keywords }} {% endblock %}
 
+{% block content %}
+
+{% load nodetag %}
+
+{% load newsapptag %} <!-- если необходимо подключаем кастомные теги -->
+
+<h1>{{ object.name }}</h1>
+
+{% endblock %}
+```
+
+```html
+<!-- пример базового шаблона публичной части списка элементов -->
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+
+{% load nodetag %}
+
+{% load newsapptag %} <!-- если необходимо подключаем кастомные теги -->
+
+{% for i in object_list %} <!-- забираем данные из встроенной переменной object_list -->
+	{{ i.name }}
+{% endfor %}
+
+{% include "paginator.html" %} <!-- если необходимо подключаем пагинатор -->
+
+{% endblock %}
+```
 
 ***
 
