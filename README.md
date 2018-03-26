@@ -1,9 +1,18 @@
 # Правила оформления кода
 
-Имя приложения: **xxxxapp**
+имя приложения: **xxxxapp**
 
-пример: **newsapp**
+пример:
+```
+INSTALLED_APPS = [
+	'shopapp',
+	'banerapp',
+	'newsapp',
+	...
+]
+```
 
+---
 
 Имя модели: **xxxxitem**, **xxxxlist**, **xxxxs**
 
