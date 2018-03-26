@@ -140,7 +140,7 @@ class panel_newslist_edit(UpdateView):
 
 #### РОУТИНГ url.py
 
-- url типа **'panel/newslist/list/'** передает управление классу **panel_newslist_list** (**'/'** замена на **'_'**)
+- url типа **'panel/newslist/list/'** передает управление классу **panel_newslist_list** (```/``` замена на ```_```)
 
 - каноническое имя url идентично названию класса **panel_newslist_list**
 
