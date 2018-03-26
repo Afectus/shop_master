@@ -146,7 +146,7 @@ class panel_newslist_edit(UpdateView):
 
 - при обращении к url через ```reverse_lazy('panel_newslist_list')``` понимаем, что будет вызван ```class panel_newslist_list(ListView):``` из **panel.py** приложения
 
-- завершающий символ **?** обязателен для url ```'^/newslist/list/?$'```, так как позволяет пользователям открывать страницу по адресам **/newslist/list/** и **/newslist/list**
+- завершающий символ ```?``` обязателен для url ```'^/newslist/list/?$'```, так как позволяет пользователям открывать страницу по адресам **/newslist/list/** и **/newslist/list**
 
 ```python
 #пример
