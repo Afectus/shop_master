@@ -170,9 +170,11 @@ urlpatterns = [
 шаблоны приложений храняться в каталоге **newsapp/templates**
 
 публичная часть
+- шаблон наследования: **template/base.html**
 - список элементов: **newsapp/templates/newsitem_list.html**
 
 приватная часть
+- шаблон наследования: **template/panel_base.html**
 - список элементов: **newsapp/templates/panel_newsitem_list.html**
 - добавление элемента: **newsapp/templates/panel_newsitem_add.html**
 - удаление элемента: **newsapp/templates/panel_newsitem_del.html**
