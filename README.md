@@ -57,15 +57,12 @@ admin.site.register(newslist, newslistAdmin)
 
 управление элементами: panel.py
 
-##### шаблон наименования класса
+#### шаблон наименования класса
 
-список элементов: panel_названиемодели_list(ListView)
-
-добавление элемента: panel_названиемодели_add(CreateView)
-
-удаление элемента: panel_названиемодел_del(DeleteView)
-
-редактирование элемента: panel_названиемодел_edit(UpdateView)
+- список элементов: panel_названиемодели_list(ListView)
+- добавление элемента: panel_названиемодели_add(CreateView)
+- удаление элемента: panel_названиемодел_del(DeleteView)
+- редактирование элемента: panel_названиемодел_edit(UpdateView)
 
 
 пример:
