@@ -45,7 +45,7 @@ class newslist(models.Model): #newslist, newss
 
 все связи моделей по возможности делаем через models.ForeignKey()
 ```python
-#пимер связи таблицы test и User по полю user
+#пимер связи таблицы mytest и User по полю user
 #плюсы подхода, автоматические удаление связанных полей
 class test(models.Model):
 	id = models.AutoField(primary_key=True, unique=True)
@@ -56,7 +56,7 @@ class test(models.Model):
 ```python
 #использование связи MTM рекомендуется использовать в крайних случаях
 #минусы подхода, ручное удаление связанных полей
-class test(models.Model):
+class mytest(models.Model):
 	id = models.AutoField(primary_key=True, unique=True)
 	user = models.ManyToManyField(User)
 	value = models.TextField(verbose_name='Комментарии')
@@ -66,12 +66,26 @@ class test(models.Model):
 
 #названия моделей обозначаем нижним регистром, игнорируем рекомендации Django
 ```python
-class test(models.Model): #+
-class Test(models.Model): #-
+class mytest(models.Model): #+
+class Mytest(models.Model): #-
 ```
 
-
-
+рекомендуемые поля при создании модели
+```python
+class mytest(models.Model):
+	ctime = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
+	#ctime выполняет функцию отслеживания даты создания объекта
+	utime = models.DateTimeField(verbose_name='Дата обновления объекта', auto_now=True)
+	#utime выполняет функцию отслеживания даты последнего обновления объекта
+	#так же может быть обновлена принудительно, пример object.utime = datetime.datetime.now()
+	#
+	name = models.CharField(verbose_name='Название', max_length=100)
+	#если нет возможности использоват name, например при конфликте с встроенными функциями, то используем
+	title = models.CharField(verbose_name='Заголовок', max_length=100)
+	#
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	#user определяет принадлежность объекта к пользователю, доп. атрибуты null=True, blank=True
+```
 
 ***
 
