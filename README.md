@@ -5,7 +5,7 @@
 шаблон имени: **xxxxapp**
 
 ```python
-#пример
+# пример
 INSTALLED_APPS = [
 	'shopapp',
 	'banerapp',
@@ -36,14 +36,14 @@ myfield = models.CharField(verbose_name='myfield', max_length=200, blank=False, 
 # если архитектурой проекта предусмотрены необязательные поля
 myfield = models.CharField(verbose_name='myfield', max_length=200, blank=True, null=False)
 #
-# для полей типа ForeignKey()
+# необязательные поля для типа ForeignKey()
 user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 ```
 
 загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
 
 ```python
-#пример
+# пример
 from dj.views import *
 
 class newslist(models.Model): #newslist, newss
@@ -60,8 +60,8 @@ class newslist(models.Model): #newslist, newss
 
 все связи моделей по возможности делаем через models.ForeignKey()
 ```python
-#пимер связи таблицы mytest и User по полю user
-#плюсы подхода, автоматические удаление связанных полей
+# пимер связи таблицы mytest и User по полю user
+# плюсы подхода, автоматические удаление связанных полей
 class test(models.Model):
 	id = models.AutoField(primary_key=True, unique=True)
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -69,8 +69,8 @@ class test(models.Model):
 ```
 
 ```python
-#использование связи MTM рекомендуется использовать в крайних случаях
-#минусы подхода, ручное удаление связанных полей
+# использование связи MTM рекомендуется использовать в крайних случаях
+# минусы подхода, ручное удаление связанных полей
 class mytest(models.Model):
 	id = models.AutoField(primary_key=True, unique=True)
 	user = models.ManyToManyField(User)
@@ -89,19 +89,19 @@ class Mytest(models.Model): #-
 ```python
 class mytest(models.Model):
 	ctime = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
-	#ctime выполняет функцию отслеживания даты создания объекта
+	# ctime выполняет функцию отслеживания даты создания объекта
 	utime = models.DateTimeField(verbose_name='Дата обновления объекта', auto_now=True)
-	#utime выполняет функцию отслеживания даты последнего обновления объекта
-	#так же может быть обновлена принудительно, пример object.utime = datetime.datetime.now()
+	# utime выполняет функцию отслеживания даты последнего обновления объекта
+	# так же может быть обновлена принудительно, пример object.utime = datetime.datetime.now()
 	#
 	name = models.CharField(verbose_name='Название', max_length=100)
-	#если нет возможности использоват name, например при конфликте с встроенными функциями, то используем
+	# если нет возможности использоват name, например при конфликте с встроенными функциями, то используем
 	title = models.CharField(verbose_name='Заголовок', max_length=100)
 	#
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	#user определяет принадлежность объекта к пользователю, доп. атрибуты null=True, blank=True
 	#
-	#seo оптимизация (для публичной части интернет страниц)
+	# seo оптимизация (для публичной части интернет страниц)
 	seo_title = models.CharField(max_length=255, blank=True)
 	seo_description = models.CharField(max_length=255, blank=True)
 	seo_keywords = models.CharField(max_length=255, blank=True)
@@ -112,7 +112,7 @@ class mytest(models.Model):
 #### УПРАВЛЕНИЕ ЭЛЕМЕНТАМИ admin.py
 
 ```python
-#пример
+# пример
 from .models import *
 
 class newslistAdmin(admin.ModelAdmin):
@@ -133,17 +133,17 @@ admin.site.register(newslist, newslistAdmin)
 
 
 ```python
-#пример
+# пример
 from acl.views import get_object_or_denied
-#(('A', 'All'), ('L', 'Список'), ('R', 'Чтение'), ('C', 'Создание'), ('U', 'Редактирование'),)
+# (('A', 'All'), ('L', 'Список'), ('R', 'Чтение'), ('C', 'Создание'), ('U', 'Редактирование'),)
 
 class panel_newslist_list(ListView):
 	model = newslist
 	template_name = 'panel_newslist_list.html'
-	#для вывода списка элементов в шаблоне использовать переменную object_list
+	# для вывода списка элементов в шаблоне использовать переменную object_list
 
 	def dispatch(self, request, *args, **kwargs):
-		get_object_or_denied(self.request.user, 'newslist', 'L') #проверяем права
+		get_object_or_denied(self.request.user, 'newslist', 'L') # проверяем права
 		return super(panel_newslist_list, self).dispatch(request, *args, **kwargs)
 		
 		
@@ -153,7 +153,7 @@ class panel_newslist_add(CreateView):
 	fields = ['name', 'pict']
 
 	def dispatch(self, request, *args, **kwargs):
-		get_object_or_denied(self.request.user, 'newslist', 'C') #проверяем права
+		get_object_or_denied(self.request.user, 'newslist', 'C') # проверяем права
 		return super(panel_newslist_add, self).dispatch(request, *args, **kwargs)
 
 	def form_valid(self, form):
@@ -172,7 +172,7 @@ class panel_newslist_del(DeleteView):
 	template_name = 'panel_newslist_del.html'
 
 	def dispatch(self, request, *args, **kwargs):
-		get_object_or_denied(self.request.user, 'baner', 'U') #проверяем права
+		get_object_or_denied(self.request.user, 'baner', 'U') # проверяем права
 		return super(panel_newslist_del, self).dispatch(request, *args, **kwargs)
 
 	def get_success_url(self):
@@ -185,7 +185,7 @@ class panel_newslist_edit(UpdateView):
 	fields = ['url', 'pict']
 
 	def dispatch(self, request, *args, **kwargs):
-		get_object_or_denied(self.request.user, 'baner', 'U') #проверяем права
+		get_object_or_denied(self.request.user, 'baner', 'U') # проверяем права
 		return super(panel_newslist_edit, self).dispatch(request, *args, **kwargs)
 
 	def form_valid(self, form):
@@ -213,16 +213,16 @@ class panel_newslist_edit(UpdateView):
 - завершающий символ ```?``` обязателен для url ```'^/newslist/list/?$'```, так как позволяет пользователям открывать страницу по адресам **/newslist/list/** и **/newslist/list**
 
 ```python
-#пример
+# пример
 from django.contrib.auth.decorators import login_required
 
 from .views import *
 from .panel import *
 
 urlpatterns = [
-	#views.py публичная часть
+	# views.py публичная часть
 	re_path('^/newslist/list/?$', newslist_list.as_view(), name='newslist_list'),
-	#panel.py приватная часть
+	# panel.py приватная часть
 	re_path('^/panel/newslist/list/?$', login_required(panel_newslist_list.as_view()), name='panel_newslist_list'),
 	re_path('^/panel/newslist/add/?$', login_required(panel_newslist_add.as_view()), name='panel_newslist_add'),
 	re_path('^/panel/newslist/del/(?P<pk>\d+)/?$', login_required(panel_newslist_del.as_view()), name='panel_newslist_del'),
