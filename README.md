@@ -84,6 +84,32 @@ class mytest(models.Model):
 class mytest(models.Model): #+
 class Mytest(models.Model): #-
 ```
+#Если нужен счетчик просмотров
+```python
+# in models.py
+
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCountMixin
+from hitcount.models import HitCount
+
+class newss(models.Model, HitCountMixin):
+hitcount = GenericRelation(HitCount, object_id_field='id', related_query_name='hit_count_generic_relation',)
+
+# in views.py
+from hitcount.views import HitCountDetailView
+
+class newss_detail(HitCountDetailView):
+    model = newss
+    template_name = 'newss_detail.html'
+    count_hit = True
+# Класс HitCountDetailView наследует класс DetailView
+
+# in template
+
+{% for newsitem in object_list %}
+newsitem.hit_count.hits
+{% endfor %}
+```
 
 рекомендуемые поля при создании модели
 ```python
