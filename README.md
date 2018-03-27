@@ -28,12 +28,16 @@ urlpatterns = [
 
 использование доп. атрибутов для полей модели
 ```python
-#по умолчанию модель должна отвечать за обязательность заполнения полей
-blank=False, null=False
-#если архитектурой проекта предусмотрены необязательные поля
-blank=True
-#для полей типа ForeignKey()
-null=True
+# по умолчанию модель должна отвечать за обязательность заполнения полей
+myfield = models.CharField(verbose_name='myfield', max_length=200)
+# или
+myfield = models.CharField(verbose_name='myfield', max_length=200, blank=False, null=False)
+#
+# если архитектурой проекта предусмотрены необязательные поля
+myfield = models.CharField(verbose_name='myfield', max_length=200, blank=True, null=False)
+#
+# для полей типа ForeignKey()
+user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 ```
 
 загрузка картинок в модель при помощи функции **make_upload_path** или **make_upload_file** из **dj.views**
