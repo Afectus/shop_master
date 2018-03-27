@@ -140,7 +140,7 @@ class panel_newslist_edit(UpdateView):
 
 #### РОУТИНГ url.py
 
-- url типа **'panel/newslist/list/'** передает управление классу **panel_newslist_list** (```/``` замена на ```_```)
+- url типа **'/panel/newslist/list/'** передает управление классу **panel_newslist_list** (```/``` замена на ```_```)
 
 - каноническое имя url идентично названию класса **panel_newslist_list**
 
@@ -159,10 +159,10 @@ urlpatterns = [
 	#views.py публичная часть
 	re_path('^/newslist/list/?$', newslist_list.as_view(), name='newslist_list'),
 	#panel.py приватная часть
-	re_path('^panel/newslist/list/?$', login_required(panel_newslist_list.as_view()), name='panel_newslist_list'),
-	re_path('^panel/newslist/add/?$', login_required(panel_newslist_add.as_view()), name='panel_newslist_add'),
-	re_path('^panel/newslist/del/(?P<pk>\d+)/?$', login_required(panel_newslist_del.as_view()), name='panel_newslist_del'),
-	re_path('^panel/newslist/edit/(?P<pk>\d+)/?$', login_required(panel_newslist_edit.as_view()), name='panel_newslist_edit'),
+	re_path('^/panel/newslist/list/?$', login_required(panel_newslist_list.as_view()), name='panel_newslist_list'),
+	re_path('^/panel/newslist/add/?$', login_required(panel_newslist_add.as_view()), name='panel_newslist_add'),
+	re_path('^/panel/newslist/del/(?P<pk>\d+)/?$', login_required(panel_newslist_del.as_view()), name='panel_newslist_del'),
+	re_path('^/panel/newslist/edit/(?P<pk>\d+)/?$', login_required(panel_newslist_edit.as_view()), name='panel_newslist_edit'),
 ]
 ```
 
@@ -241,6 +241,24 @@ urlpatterns = [
 
 {% endblock %}
 ```
+
+комментирование участков кода в шаблоне средствами шаблонизатора Django 
+```
+{% comment %}
+<div class="test">test</div>
+{% endcomment %}
+```
+	
+Плохой пример комментирования, отнимает ресурсы
+```
+<!-- 
+<div class="test">test</div>
+-->
+```
+
+
+
+
 
 ***
 
