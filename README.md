@@ -85,6 +85,11 @@ class mytest(models.Model):
 	#
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	#user определяет принадлежность объекта к пользователю, доп. атрибуты null=True, blank=True
+	#
+	#seo оптимизация (для публичной части интернет страниц)
+	seo_title = models.CharField(max_length=255, blank=True)
+	seo_description = models.CharField(max_length=255, blank=True)
+	seo_keywords = models.CharField(max_length=255, blank=True)
 ```
 
 ***
