@@ -43,6 +43,36 @@ class newslist(models.Model): #newslist, newss
 		return u'%s' % (self.id, self.name)
 ```
 
+все связи моделей по возможности делаем через models.ForeignKey()
+```python
+#пимер связи таблицы test и User по полю user
+#плюсы подхода, автоматические удаление связанных полей
+class test(models.Model):
+	id = models.AutoField(primary_key=True, unique=True)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	
+```
+
+```python
+#использование связи MTM рекомендуется использовать в крайних случаях
+#минусы подхода, ручное удаление связанных полей
+class test(models.Model):
+	id = models.AutoField(primary_key=True, unique=True)
+	user = models.ManyToManyField(User)
+	value = models.TextField(verbose_name='Комментарии')
+	pict = models.ManyToManyField(projectpict, blank=True)
+	
+```
+
+#названия моделей обозначаем нижним регистром, игнорируем рекомендации Django
+```python
+class test(models.Model): #+
+class Test(models.Model): #-
+```
+
+
+
+
 ***
 
 #### УПРАВЛЕНИЕ ЭЛЕМЕНТАМИ admin.py
@@ -249,7 +279,7 @@ urlpatterns = [
 {% endcomment %}
 ```
 	
-Плохой пример комментирования, отнимает ресурсы
+плохой пример комментирования, отнимает ресурсы
 ```
 <!-- 
 <div class="test">test</div>
